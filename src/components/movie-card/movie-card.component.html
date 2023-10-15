@@ -1,1 +1,8 @@
-<p>movie-card works!</p>
+<div class="card">
+    <a [routerLink]="['/movies', movie.id]"><img class="card-img-top" [src]="backdropImageUrl" alt="{{ movie.title }} backdrop"></a>
+    <div class="card-body">
+        <a [routerLink]="['/movies', movie.id]"><h5 class="card-title">{{ movie.title }}</h5></a>
+      <p class="card-text">{{ movie.releaseDate }}</p>
+      <i class="fa fa-heart"></i>
+    </div>
+  </div>

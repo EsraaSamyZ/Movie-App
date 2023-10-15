@@ -8,13 +8,17 @@ import { MovieService } from '../../services/themovieAPI.service';
 })
 export class HomeComponent {
 
-  movies!: any[];
+  movies: any[] = [];
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe(data => {
       this.movies = data.results;
+
+      this.movies.forEach(movie => {
+        movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+      });
     });
   }
 

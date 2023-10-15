@@ -15,4 +15,10 @@ export class MovieService {
     const url = `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
+
+  getMovieDetails(movieId: number): Observable<any> {
+    const url = `${this.apiUrl}/movie/${movieId}?api_key=${this.apiKey}`;
+    return this.http.get(url);
+  }
+
 }
