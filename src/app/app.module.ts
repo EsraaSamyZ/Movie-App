@@ -7,19 +7,26 @@ import { HomeComponent } from 'src/components/home/home.component';
 import { WatchListComponent } from 'src/components/watch-list/watch-list.component';
 import { DetailsModule } from 'src/components/details/details.module';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieCardComponent } from '../components/movie-card/movie-card.component';
+
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    WatchListComponent
+    WatchListComponent,
+    MovieCardComponent
 
   ],
   imports: [
     BrowserModule,
     DetailsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

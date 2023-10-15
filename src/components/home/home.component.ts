@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../../services/themovieAPI.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  movies: any[] = [];
+
+  constructor(private movieService: MovieService) { }
+
+  ngOnInit(): void {
+    this.movieService.getPopularMovies().subscribe(data => {
+      this.movies = data.results;
+
+      this.movies.forEach(movie => {
+        movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+      });
+    });
+  }
 
 }
