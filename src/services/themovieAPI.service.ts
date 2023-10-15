@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class MovieService {
   private apiKey = '89331dd238f7d3c8400eda6517901145';
   private apiUrl = 'https://api.themoviedb.org/3';
@@ -16,8 +17,14 @@ export class MovieService {
     return this.http.get(url);
   }
 
+  // FOR Nourhan detailes page
   getMovieDetails(movieId: number): Observable<any> {
     const url = `${this.apiUrl}/movie/${movieId}?api_key=${this.apiKey}`;
+    return this.http.get(url);
+  }
+
+  getRecommendedMovies(movieId: number): Observable<any> {
+    const url = `${this.apiUrl}/movie/${movieId}/recommendations?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
 
