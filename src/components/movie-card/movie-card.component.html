@@ -12,7 +12,9 @@
       </h5>
       <p class="card-text">{{ movie.id }}</p>
       <p class="card-text">{{ movie.release_date }}</p>
-      <i class="fa-regular fa-heart"></i>
+      <a href="" (click)="addToWatchList(movie)">
+        <i class="fa-regular fa-heart"></i>
+      </a>
     </div>
   </a>
 </div>

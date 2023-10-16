@@ -13,4 +13,8 @@ export class WatchListService {
   getFavouritMovies(){
     return this.favouritMovies.asObservable()
   }
+  AddtoWatchList(movie : any){
+    this.favouritMoviesList.push(movie)
+    this.favouritMovies.next(this.favouritMoviesList)
+  }
 }
