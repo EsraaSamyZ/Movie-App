@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WatchListService } from 'src/services/watch-list.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,4 +9,13 @@ import { Component, Input } from '@angular/core';
 export class MovieCardComponent {
   @Input() movie: any;
   @Input() backdropImageUrl!: string;
+
+  constructor(private WatchListService: WatchListService){
+
+  }
+  ngOnInit(){
+  }
+  addToWatchList(favMovie:any){
+    this.WatchListService.AddtoWatchList(favMovie)
+  }
 }

@@ -15,7 +15,7 @@ export class HomeComponent {
   ngOnInit(): void {
     this.movieService.getPopularMovies().subscribe(data => {
       this.movies = data.results;
-
+      console.log(this.movies)
       this.movies.forEach(movie => {
         movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
       });
