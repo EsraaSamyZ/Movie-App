@@ -18,7 +18,10 @@
       <div class="details">
         <p>{{ movie.overview }}</p>
       </div>
+      <div *ngFor="let genr of movie.genres">
+        <a href="#" class="btn-genre">{{ genr.name }}</a>
+      </div>
     </div>
   </div>
+  <app-recommendatins></app-recommendatins>
 </div>
-<app-recommendatins></app-recommendatins>
