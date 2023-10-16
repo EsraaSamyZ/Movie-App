@@ -1,11 +1,6 @@
-<link
-  rel="stylesheet"
-  href="https://i.icomoon.io/public/temp/7ccb71a53f/UntitledProject/style.css"
-/>
-
 <div class="card-deck">
   <div class="row">
-    <div class="p-2 col-md-2" *ngFor="let movie of movies">
+    <div class="hovr p-2 col-md-2" *ngFor="let movie of movies">
       <a [routerLink]="['/movies', movie.id]">
         <img class="card-img-top" [src]="movie.img" alt="{{ movie.title }}" />
       </a>
