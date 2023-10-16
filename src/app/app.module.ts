@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieCardComponent } from '../components/movie-card/movie-card.component';
 
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

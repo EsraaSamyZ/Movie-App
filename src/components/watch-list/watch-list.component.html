@@ -1,1 +1,36 @@
-<section class=""></section>
+<section class="watchList">
+  <div class="container">
+    <h3>Watch list</h3>
+    <div class="row watchList_items">
+      <div class="col-md-6 watchList_item" *ngFor="let movie of favMovies">
+        <div class="favMovie_content card row flex-row">
+          <figure class="col-sm-6">
+            <img class="" [src]="movie.img" alt="Card image cap" />
+          </figure>
+
+          <div class="card-body col-sm-6">
+            <div class="d-flex">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <a>
+                <i class="fa-regular fa-heart"></i>
+              </a>
+            </div>
+            <p>{{ movie.release_date }}</p>
+            <div class="d-flex">
+              <div class="stars">
+                <ngb-rating
+                  [max]="7"
+                  [(rate)]="movie.vote_average"
+                ></ngb-rating>
+              </div>
+              <h6>{{ movie.vote_count }}</h6>
+            </div>
+            <p class="card-text">
+              {{ movie.overview }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
