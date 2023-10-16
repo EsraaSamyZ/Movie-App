@@ -23,7 +23,7 @@ export class MovieDetailsComponent {
       .subscribe((data) => {
         this.movie = data;
         this.movie.img = `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
-        console.log(this.movie);
+
         this.movie.vote = this.movie.vote_average / 2;
       });
   }

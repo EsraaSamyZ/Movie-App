@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieService } from 'src/services/themovieAPI.service';
 import { ActivatedRoute } from '@angular/router';
+
 import { Movie } from 'src/interface/movie.interface';
 
 @Component({
@@ -9,7 +10,7 @@ import { Movie } from 'src/interface/movie.interface';
   styleUrls: ['./recommendatins.component.css'],
 })
 export class RecommendatinsComponent {
-  recommended!: Movie;
+  recommended!: Array<Movie>;
   constructor(
     private MOVIESERVICE: MovieService,
     private activatedRoute: ActivatedRoute
@@ -18,6 +19,12 @@ export class RecommendatinsComponent {
   ngOnInit() {
     this.MOVIESERVICE.getRecommendedMovies(
       this.activatedRoute.snapshot.params['id']
-    ).subscribe((dat) => (this.recommended = dat.results));
+    ).subscribe((dat) => {
+      this.recommended = dat.results;
+      console.log(this.recommended);
+      this.recommended.forEach((mo: Movie) => {
+        mo.img = `https://image.tmdb.org/t/p/w500/${mo.poster_path}`;
+      });
+    });
   }
 }
