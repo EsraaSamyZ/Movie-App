@@ -18,4 +18,15 @@ export class MovieCardComponent {
   addToWatchList(favMovie: Movie) {
     this.WatchListService.AddtoWatchList(favMovie);
   }
+
+  isFavoriteMovie(favMovie: Movie): boolean {
+    let isFavorite = false;
+    
+    this.WatchListService.getFavouritMovies().subscribe((favoriteMovies: Movie[]) => {
+      isFavorite = favoriteMovies.some((movie) => movie.id === favMovie.id);
+    });
+  
+    return isFavorite;
+  }
+
 }
