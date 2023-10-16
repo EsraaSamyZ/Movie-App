@@ -17,5 +17,6 @@ export class WatchListService {
   AddtoWatchList(movie : Movie){
     this.favouritMoviesList.push(movie)
     this.favouritMovies.next(this.favouritMoviesList)
+
   }
 }
