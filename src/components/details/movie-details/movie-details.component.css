@@ -1,0 +1,13 @@
+figure {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+img {
+  border-radius: 10%;
+}
+.stars {
+  justify-content: flex-end;
+}
+.star {
+  font-size: 1.3rem;
+}
