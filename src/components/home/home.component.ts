@@ -18,7 +18,7 @@ export class HomeComponent {
       this.movies = data.results.slice(0, 12);
       // console.log(this.movies)
       this.movies.forEach(movie => {
-        movie.img = `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.backdrop_path}`;
+        movie.img = `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.poster_path}`;
       });
     });
   }
