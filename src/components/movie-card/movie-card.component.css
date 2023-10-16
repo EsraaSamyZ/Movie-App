@@ -1,0 +1,13 @@
+img {
+  width: 12.125rem;
+  height: 18.0625rem;
+  border-radius: 1rem;
+}
+
+h5 {
+  color: #000;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/themovieAPI.service';
+import {Movie} from '../../interface/movie.interface';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { MovieService } from '../../services/themovieAPI.service';
 })
 export class HomeComponent {
 
-  movies: any[] = [];
+  movies: Movie[] = [];
 
   constructor(private movieService: MovieService) { }
 
@@ -17,7 +18,7 @@ export class HomeComponent {
       this.movies = data.results;
       console.log(this.movies)
       this.movies.forEach(movie => {
-        movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+        movie.img = `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${movie.backdrop_path}`;
       });
     });
   }

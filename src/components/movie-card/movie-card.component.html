@@ -3,15 +3,16 @@
   <a [routerLink]="['/movies', movie.id]">
     <img
       class="card-img-top"
-      [src]="backdropImageUrl"
-      alt="{{ movie.title }} backdrop"
+      [src]="movie.img"
+      alt="{{ movie.title }}"
     />
   </a>
   <div class="card-body">
-    <h5 class="card-title" [routerLink]="['/movies', movie.id]">
-      {{ movie.title }}
-    </h5>
-    <p class="card-text">{{ movie.id }}</p>
+    <a [routerLink]="['/movies', movie.id]">
+      <h5 class="card-title" [routerLink]="['/movies', movie.id]">
+        {{ movie.title }}
+      </h5>
+    </a>
     <p class="card-text">{{ movie.release_date }}</p>
     <a (click)="addToWatchList(movie)">
       <i class="fa-regular fa-heart"></i>
