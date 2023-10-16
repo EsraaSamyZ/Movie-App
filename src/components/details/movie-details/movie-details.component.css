@@ -1,0 +1,32 @@
+figure {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+img {
+  border-radius: 10%;
+}
+.stars {
+  justify-content: flex-end;
+}
+.star {
+  font-size: 1.4rem;
+}
+.btn-genre {
+  background-color: rgb(255, 227, 83);
+  padding: 0.2rem 1.5rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  border: none;
+  color: black;
+}
+.yellow {
+  color: yellow;
+}
+.details {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+.info {
+  font-size: 0.75rem;
+}

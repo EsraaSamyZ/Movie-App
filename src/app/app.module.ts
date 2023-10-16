@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieCardComponent } from '../components/movie-card/movie-card.component';
 
 import { RouterModule } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomDatePipe } from '../pipes/custom-date.pipe'; 
 
 @NgModule({
   declarations: [
@@ -19,8 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     HomeComponent,
     WatchListComponent,
-    MovieCardComponent
-
+    MovieCardComponent,
+    CustomDatePipe,
   ],
   imports: [
     BrowserModule,
@@ -29,8 +31,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     RouterModule,
     NgbModule,
+    DatePipe,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

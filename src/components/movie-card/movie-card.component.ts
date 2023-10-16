@@ -1,21 +1,32 @@
 import { Component, Input } from '@angular/core';
-import { WatchListService } from 'src/services/watch-list.service';
+import { WatchListService } from '../../services/watch-list.service';
+import { CustomDatePipe } from '../../pipes/custom-date.pipe';
+import { Movie } from '../../interface/movie.interface';
 
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.css']
+  styleUrls: ['./movie-card.component.css'],
 })
 export class MovieCardComponent {
-  @Input() movie: any;
-  @Input() backdropImageUrl!: string;
+  @Input() movies!: Movie[];
 
-  constructor(private WatchListService: WatchListService){
+  constructor(private WatchListService: WatchListService) {}
 
+  ngOnInit() {}
+
+  addToWatchList(favMovie: Movie) {
+    this.WatchListService.AddtoWatchList(favMovie);
   }
-  ngOnInit(){
+
+  isFavoriteMovie(favMovie: Movie): boolean {
+    let isFavorite = false;
+    
+    this.WatchListService.getFavouritMovies().subscribe((favoriteMovies: Movie[]) => {
+      isFavorite = favoriteMovies.some((movie) => movie.id === favMovie.id);
+    });
+  
+    return isFavorite;
   }
-  addToWatchList(favMovie:any){
-    this.WatchListService.AddtoWatchList(favMovie)
-  }
+
 }

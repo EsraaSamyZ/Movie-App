@@ -1,20 +1,29 @@
-<div class="card">
-  <!-- Add the routerLink to both the image and the title -->
-  <a [routerLink]="['/movies', movie.id]">
-    <img
-      class="card-img-top"
-      [src]="backdropImageUrl"
-      alt="{{ movie.title }} backdrop"
-    />
-  </a>
-  <div class="card-body">
-    <h5 class="card-title" [routerLink]="['/movies', movie.id]">
-      {{ movie.title }}
-    </h5>
-    <p class="card-text">{{ movie.id }}</p>
-    <p class="card-text">{{ movie.release_date }}</p>
-    <a (click)="addToWatchList(movie)">
-      <i class="fa-regular fa-heart"></i>
-    </a>
+<div class="card-deck">
+  <div class="row">
+    <div class="hovr p-2 col-md-2" *ngFor="let movie of movies">
+      <a [routerLink]="['/movies', movie.id]">
+        <img class="card-img-top" [src]="movie.img" alt="{{ movie.title }}" />
+      </a>
+      <div class="card-body d-flex justify-content-between">
+        <div class="">
+          <a [routerLink]="['/movies', movie.id]">
+            <h5 class="card-title" [routerLink]="['/movies', movie.id]">
+              {{ movie.title }}
+            </h5>
+          </a>
+          <p class="text-muted m-0">{{ movie.release_date | customDate }}</p>
+        </div>
+        <div class="align-self-end">
+          <a class="icon_heart" (click)="addToWatchList(movie)">
+            <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
+              <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
+            </ng-container>
+            <ng-template #notFavorite>
+              <i class="fa-regular fa-heart fa-xl" style="color: #000000"></i>
+            </ng-template>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
