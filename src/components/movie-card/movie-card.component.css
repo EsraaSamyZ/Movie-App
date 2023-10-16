@@ -1,11 +1,12 @@
 img {
-  width: 12.125rem;
-  height: 18.0625rem;
+  width: 100%;
+  /* width: 12.125rem; */
+  /* height: 18.0625rem; */
   border-radius: 1rem;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h5 {
@@ -16,3 +17,5 @@ h5 {
   font-weight: 600;
   line-height: normal;
 }
+
+
