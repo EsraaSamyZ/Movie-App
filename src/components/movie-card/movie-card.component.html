@@ -1,12 +1,18 @@
 <div class="card">
   <!-- Add the routerLink to both the image and the title -->
   <a [routerLink]="['/movies', movie.id]">
-    <img class="card-img-top" [src]="backdropImageUrl" alt="{{ movie.title }} backdrop">
+    <img
+      class="card-img-top"
+      [src]="backdropImageUrl"
+      alt="{{ movie.title }} backdrop"
+    />
     <div class="card-body">
-      <h5 class="card-title" [routerLink]="['/movies', movie.id]">{{ movie.title }}</h5>
+      <h5 class="card-title" [routerLink]="['/movies', movie.id]">
+        {{ movie.title }}
+      </h5>
       <p class="card-text">{{ movie.id }}</p>
       <p class="card-text">{{ movie.release_date }}</p>
-      <i class="fa fa-heart"></i>
+      <i class="fa-regular fa-heart"></i>
     </div>
   </a>
 </div>
