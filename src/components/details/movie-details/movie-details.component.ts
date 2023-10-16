@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/services/themovieAPI.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Movie } from 'src/interface/movie.interface';
+import { WatchListService } from 'src/services/watch-list.service';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
@@ -12,7 +14,8 @@ export class MovieDetailsComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private themovieApi: MovieService
+    private themovieApi: MovieService,
+    private WatchListService: WatchListService
   ) {}
   ngOnInit() {
     this.movie = this.themovieApi
@@ -23,5 +26,18 @@ export class MovieDetailsComponent {
         console.log(this.movie);
         this.movie.vote = this.movie.vote_average / 2;
       });
+  }
+  isFavoriteMovie(mov: Movie) {
+    let isFavorite = false;
+
+    this.WatchListService.getFavouritMovies().subscribe(
+      (favoriteMovies: Movie[]) => {
+        isFavorite = favoriteMovies.some((movie) => movie.id === mov.id);
+        return isFavorite;
+      }
+    );
+  }
+  addToWatchList(favMovie: Movie) {
+    this.WatchListService.AddtoWatchList(favMovie);
   }
 }

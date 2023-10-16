@@ -12,4 +12,9 @@ img {
   font-size: 1.3rem;
 }
 .btn-genre {
+  background-color: rgb(255, 227, 83);
+  padding: 0.2rem 1rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  border: none;
 }
