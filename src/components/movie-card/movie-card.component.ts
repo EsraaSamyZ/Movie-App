@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { WatchListService } from 'src/services/watch-list.service';
+import { CustomDatePipe } from '../../pipes/custom-date.pipe';
 
 @Component({
   selector: 'app-movie-card',

@@ -12,6 +12,7 @@ import { MovieCardComponent } from '../components/movie-card/movie-card.componen
 
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomDatePipe } from '../pipes/custom-date.pipe'; 
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     HomeComponent,
     WatchListComponent,
-    MovieCardComponent
-
+    MovieCardComponent,
+    CustomDatePipe,
   ],
   imports: [
     BrowserModule,
