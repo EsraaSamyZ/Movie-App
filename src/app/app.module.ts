@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsPageComponent } from '../components/details-page/details-page.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NotFountComponent } from 'src/components/not-fount/not-fount.component';
+import { PaginationComponent } from './pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { NotFountComponent } from 'src/components/not-fount/not-fount.component'
     SearchbarComponent,
     MovieDetailsComponent,
     NotFountComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
