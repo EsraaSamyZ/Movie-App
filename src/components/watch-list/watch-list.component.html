@@ -22,22 +22,17 @@
                 </ng-template>
               </a>
             </div>
-            <p class="watchList_item_date">{{ movie.release_date }}</p>
-            <div class="d-flex">
-              <div class="stars">
-                <ngb-rating
-                  [max]="5"
-                  [(rate)]="movie.vote_average"
-                ></ngb-rating>
-              </div>
-              <h6>{{ movie.vote_count }}</h6>
-            </div>
-            <div class="card-text watchList_item_description">
-              <p>
-                {{ movie.overview }}
-              </p>
-            </div>
           </div>
+          <p>{{ movie.release_date }}</p>
+          <div class="d-flex">
+            <div class="stars">
+              <ngb-rating [max]="7" [(rate)]="movie.vote_average"></ngb-rating>
+            </div>
+            <h6>{{ movie.vote_count }}</h6>
+          </div>
+          <p class="card-text">
+            {{ movie.overview }}
+          </p>
         </div>
       </div>
     </div>
