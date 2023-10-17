@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/services/themovieAPI.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Movie } from 'src/interface/movie.interface';
+import { Movie } from '../../interface/movie.interface';
 import { WatchListService } from 'src/services/watch-list.service';
 @Component({
   selector: 'app-movie-details',
@@ -11,22 +11,30 @@ import { WatchListService } from 'src/services/watch-list.service';
 })
 export class MovieDetailsComponent {
   movie: any = [];
+  @Input() movieID!: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private themovieApi: MovieService,
     private WatchListService: WatchListService
   ) {}
-  ngOnInit() {
-    this.movie = this.themovieApi
-      .getMovieDetails(+this.activatedRoute.snapshot.params['id'])
-      .subscribe((data) => {
-        this.movie = data;
-        this.movie.img = `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
 
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.movieID = +params['id'];
+
+      this.themovieApi.getMovieDetails(this.movieID).subscribe((data) => {
+        this.movie = data;
+        if (this.movie.poster_path !== null) {
+          this.movie.img = `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${this.movie.poster_path}`;
+        } else {
+          this.movie.img = 'https://placehold.co/370x566';
+        }
         this.movie.vote = this.movie.vote_average / 2;
       });
+    });
   }
+
   isFavoriteMovie(mov: Movie) {
     let isFavorite = false;
 
@@ -37,6 +45,7 @@ export class MovieDetailsComponent {
       }
     );
   }
+
   addToWatchList(favMovie: Movie) {
     this.WatchListService.AddtoWatchList(favMovie);
   }

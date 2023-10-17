@@ -6,14 +6,15 @@
     <div class="col-lg-8 pt-5 w-50 mt-1">
       <div class="header d-flex justify-content-between">
         <h3 class="fw-bold">{{ movie.title }}</h3>
-        <!-- <a class="icon_heart" (click)="addToWatchList(movie)">
+
+        <a class="icon_heart" (click)="addToWatchList(movie)">
           <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
             <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
           </ng-container>
           <ng-template #notFavorite>
             <i class="fa-regular fa-heart fa-xl" style="color: #000000"></i>
           </ng-template>
-        </a> -->
+        </a>
       </div>
 
       <p class="text-muted">{{ movie.release_date | date }}</p>
@@ -46,5 +47,5 @@
       </div>
     </div>
   </div>
-  <app-recommendatins></app-recommendatins>
+  <!-- <app-recommendations></app-recommendations> -->
 </div>
