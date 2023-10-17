@@ -9,6 +9,7 @@ import { MovieService } from 'src/services/themovieAPI.service';
 })
 export class SearchbarComponent {
   searchedmovie!: any;
+  value!: any;
   constructor(private movieService: MovieService) {}
   movies: Movie[] = [];
   Movie!: object;
