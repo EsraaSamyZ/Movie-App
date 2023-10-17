@@ -14,8 +14,8 @@ import { RecommendationsComponent } from '../components/recommendations/recommen
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CustomDatePipe } from '../pipes/custom-date.pipe';
-import { DetailsPageComponent } from '../components/details-page/details-page.component'; 
+
+import { DetailsPageComponent } from '../components/details-page/details-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { DetailsPageComponent } from '../components/details-page/details-page.co
     HomeComponent,
     WatchListComponent,
     MovieCardComponent,
-    CustomDatePipe,
+
     MovieDetailsComponent,
     RecommendationsComponent,
     DetailsPageComponent,
