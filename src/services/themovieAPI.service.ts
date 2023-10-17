@@ -3,14 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class MovieService {
   private apiKey = '89331dd238f7d3c8400eda6517901145';
   private apiUrl = 'https://api.themoviedb.org/3';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPopularMovies(): Observable<any> {
     const url = `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`;
@@ -27,5 +26,8 @@ export class MovieService {
     const url = `${this.apiUrl}/movie/${movieId}/recommendations?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
-
+  getmovie(MovieName: string) {
+    const url = `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${MovieName}`;
+    return this.http.get(url);
+  }
 }
