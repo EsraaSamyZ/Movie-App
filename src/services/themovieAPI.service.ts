@@ -26,8 +26,9 @@ export class MovieService {
     const url = `${this.apiUrl}/movie/${movieId}/recommendations?api_key=${this.apiKey}`;
     return this.http.get(url);
   }
-  getmovie(MovieName: string) {
+  getmovie(MovieName: string): Observable<any> {
     const url = `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${MovieName}`;
     return this.http.get(url);
   }
+  
 }
