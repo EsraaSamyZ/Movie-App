@@ -8,9 +8,10 @@
       type="text"
       class="form-control"
       placeholder="Search and explore..."
+      [(ngModel)]="value"
     />
     <div class="input-group-append">
-      <button class="btn search ms-4" type="button" (click)="search()">
+      <button class="btn search ms-4" type="button" (click)="search(value)">
         Search
       </button>
     </div>

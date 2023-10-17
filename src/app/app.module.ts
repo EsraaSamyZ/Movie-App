@@ -24,11 +24,11 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     HomeComponent,
     WatchListComponent,
     MovieCardComponent,
-    MovieDetailsComponent,
     RecommendationsComponent,
     DetailsPageComponent,
     SearchbarComponent,
     FormsModule,
+    NgbModule,
     NgbRatingModule,
   ],
   imports: [
