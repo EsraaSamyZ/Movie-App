@@ -9,18 +9,13 @@ import { DetailsPageComponent } from '../components/details-page/details-page.co
 const routes: Routes = [
   // { path: '', redirectTo: '/movies', pathMatch: 'full' },
   { path: '', component: HomeComponent },
-  { path: 'movies/:id', component: DetailsPageComponent},
-  { path:'favmovies' ,component :WatchListComponent }
+  { path: 'movies/:id', component: DetailsPageComponent },
+  { path: 'favmovies', component: WatchListComponent },
 ];
-
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes),
-  ],
-  exports: [RouterModule]
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}
