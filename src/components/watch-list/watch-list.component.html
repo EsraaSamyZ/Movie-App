@@ -11,9 +11,19 @@
           <div class="card-body col-sm-6">
             <div class="d-flex">
               <h5 class="card-title">{{ movie.title }}</h5>
-              <a>
-                <i class="fa-regular fa-heart"></i>
+
+
+              <a class="icon_heart" (click)="addToWatchList(movie)">
+                <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
+                  <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
+                </ng-container>
+                <ng-template #notFavorite>
+                  <i class="fa-regular fa-heart fa-xl" style="color: #000000"></i>
+                </ng-template>
               </a>
+
+
+            </div>
             </div>
             <p>{{ movie.release_date }}</p>
             <div class="d-flex">
@@ -32,5 +42,4 @@
         </div>
       </div>
     </div>
-  </div>
 </section>

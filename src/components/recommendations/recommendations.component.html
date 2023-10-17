@@ -1,0 +1,12 @@
+<div class="my-5">
+  <header class="py-3">
+    <h2>Recommendations</h2>
+  </header>
+    <app-movie-card *ngIf="movies && movies.length > 0" [movies]="movies"></app-movie-card>
+    <div *ngIf="!movies || movies.length === 0">
+      <!-- Maybe use better design here -->
+    <p>No movies available.</p>
+  </div>
+</div>
+
+
