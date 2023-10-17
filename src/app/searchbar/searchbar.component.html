@@ -1,0 +1,22 @@
+<div class="searchheader">
+  <h2 class="mb-4">Welcome to our movie app</h2>
+  <p class="mb-4 mt-4">
+    Millions of movies, TV shows and people to discover. Explore now.
+  </p>
+  <div class="input-group mt-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search and explore..."
+    />
+    <div class="input-group-append">
+      <button
+        class="btn search ms-4"
+        type="button"
+        (click)="search() (ngmodel)=[value]"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
