@@ -9,25 +9,18 @@ import { Movie } from '../../interface/movie.interface';
 })
 export class MovieCardComponent {
   @Input() movies!: Movie[];
-  favMovieList :Array<Movie> =[]
+  favMovieList: Array<Movie> = [];
 
-  constructor(
-    private WatchListService: WatchListService,
-
-  ) {}
+  constructor(private WatchListService: WatchListService) {}
 
   ngOnInit() {
-    this.WatchListService.getFavouritMovies().subscribe((res)=>{
-          this.favMovieList = res;
-      console.log(this.favMovieList )
-    })
+    this.WatchListService.getFavouritMovies().subscribe((res) => {
+      this.favMovieList = res;
+    });
   }
 
   addToWatchList(favMovie: Movie) {
-
     this.WatchListService.AddtoWatchList(favMovie);
-
-
   }
 
   isFavoriteMovie(favMovie: Movie): boolean {
@@ -39,6 +32,4 @@ export class MovieCardComponent {
     );
     return isFavorite;
   }
-
 }
-

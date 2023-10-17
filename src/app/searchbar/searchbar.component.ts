@@ -21,7 +21,10 @@ export class SearchbarComponent {
       console.log(this.searchedmovie);
       this.movieService
         .getmovie(this.searchedmovie.title)
-        .subscribe((data) => (this.Movie = data));
+        .subscribe((data: any) => {
+          this.Movie = data.results;
+          console.log(this.Movie);
+        });
     });
   }
 }
