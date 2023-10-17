@@ -21,13 +21,13 @@ export class WatchListService {
 
   AddtoWatchList(movie: Movie) {
     const index = this.favouritMoviesList.findIndex((m) => m.id === movie.id);
-  
+
     if (index === -1) {
       this.favouritMoviesList.push(movie);
     } else {
       this.favouritMoviesList.splice(index, 1);
     }
-  
+
     this.favouritMovies.next(this.favouritMoviesList);
   }
 }

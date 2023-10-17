@@ -1,6 +1,7 @@
 <div class="container my-5">
-  <header class="py-3">
-    <h2>Popular Movies</h2>
+  <app-searchbar (myData)="mychild($event)"></app-searchbar>
+  <header class="py-3 mt-4">
+    <h2 class="mt-3 mb-3">Popular Movies</h2>
   </header>
   <app-movie-card [movies]="movies"></app-movie-card>
 </div>

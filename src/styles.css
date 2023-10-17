@@ -9,15 +9,15 @@ body {
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }

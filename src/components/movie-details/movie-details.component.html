@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-lg-4 ms-1">
+  <div class="col-lg-4 ms-1 col-sm-12">
     <figure><img [src]="movie.img" alt="picture" /></figure>
   </div>
-  <div class="col-lg-8 pt-5 w-50 mt-1">
+  <div class="col-lg-7 pt-5 mt-4 col-sm-12 mx-auto col-md-12">
     <div class="header d-flex justify-content-between">
       <h3 class="fw-bold">{{ movie.title }}</h3>
 
-      <a class="icon_heart" (click)="addToWatchList(movie)">
+      <a class="icon_heart mt-2" (click)="addToWatchList(movie)">
         <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
           <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
         </ng-container>

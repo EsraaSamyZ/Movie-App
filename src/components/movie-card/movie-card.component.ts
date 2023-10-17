@@ -9,13 +9,15 @@ import { Movie } from '../../interface/movie.interface';
 })
 export class MovieCardComponent {
   @Input() movies!: Movie[];
+  favMovieList: Array<Movie> = [];
 
-  constructor(
-    private WatchListService: WatchListService,
+  constructor(private WatchListService: WatchListService) {}
 
-  ) {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.WatchListService.getFavouritMovies().subscribe((res) => {
+      this.favMovieList = res;
+    });
+  }
 
   addToWatchList(favMovie: Movie) {
     this.WatchListService.AddtoWatchList(favMovie);
@@ -30,6 +32,4 @@ export class MovieCardComponent {
     );
     return isFavorite;
   }
-
 }
-

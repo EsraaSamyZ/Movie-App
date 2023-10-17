@@ -1,5 +1,17 @@
-body {
-  padding: 0;
-  border-radius: 0;
-  margin: 0;
+.navbar {
+  background-color: #ffe353;
+}
+.nav_wish-list {
+  position: relative;
+}
+.nav_wish-list-counter {
+  position: absolute;
+  top: 0;
+  right: -1.625rem;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: #fff;
+  color: black;
+  padding: 0px 0.5rem;
+  border-radius: 0.25rem;
 }

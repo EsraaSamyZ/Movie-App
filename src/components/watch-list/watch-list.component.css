@@ -1,0 +1,32 @@
+.watchList_item {
+  display: flex;
+  padding: 2rem;
+}
+.favMovie_content {
+  border: none;
+  border-radius: 8px;
+}
+.watchList_item figure {
+  padding: 1rem;
+}
+.watchList_item img {
+  border-radius: 1rem;
+}
+.watchList_item_description {
+  height: 10.5rem;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.empty_watchList {
+  text-align: center;
+  padding: 4rem 0;
+}
+.empty_watchList button {
+  background-color: #ffe353;
+  outline: none;
+  border: none;
+}
+.empty_watchList_img {
+  width: 14rem;
+  margin: auto;
+}

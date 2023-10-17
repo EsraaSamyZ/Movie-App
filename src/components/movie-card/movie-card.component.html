@@ -1,10 +1,17 @@
 <div class="card-deck">
   <div class="row">
-    <div class="hovr p-2 col-md-2" *ngFor="let movie of movies">
+    <div
+      class="hovr p-2 col-sm-6 col-md-4 col-lg-2"
+      *ngFor="let movie of movies"
+    >
       <router-outlet>
-      <a [routerLink]="['/movies', movie.id]">
-        <img class="card-img-top" [src]="movie.img" alt="{{ movie.title }}" />
-      </a></router-outlet>
+        <a [routerLink]="['/movies', movie.id]">
+          <img
+            class="card-img-top"
+            [src]="movie.img"
+            alt="{{ movie.title }}"
+          /> </a
+      ></router-outlet>
       <div class="card-body d-flex justify-content-between">
         <div class="">
           <a [routerLink]="['/movies', movie.id]">
