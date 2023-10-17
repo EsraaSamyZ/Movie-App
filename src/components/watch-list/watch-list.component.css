@@ -17,3 +17,14 @@
   overflow: hidden;
   margin-bottom: 0;
 }
+.empty_watchList {
+  text-align: center;
+  padding: 4rem 0;
+}
+.empty_watchList button {
+  background-color: #ffe353;
+}
+.empty_watchList_img {
+  width: 14rem;
+  margin: auto;
+}

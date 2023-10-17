@@ -1,7 +1,7 @@
 <section class="watchList py-4">
   <div class="container">
     <h3>Watch list</h3>
-    <div class="row watchList_items">
+    <div class="row watchList_items" *ngIf="favMovies.length > 0">
       <div class="col-md-6 watchList_item" *ngFor="let movie of favMovies">
         <div class="favMovie_content card row flex-row shadow">
           <figure class="col-sm-6">
@@ -39,22 +39,16 @@
                 {{ movie.overview }}
               </p>
             </div>
-            <p>{{ movie.release_date }}</p>
-            <div class="d-flex">
-              <div class="stars">
-                <ngb-rating
-                  [max]="5"
-                  [(rate)]="movie.vote_average"
-                ></ngb-rating>
-              </div>
-              <h6>{{ movie.vote_count }}</h6>
-            </div>
-            <p class="card-text">
-              {{ movie.overview }}
-            </p>
           </div>
         </div>
       </div>
+    </div>
+    <div *ngIf="favMovies.length == 0" class="empty_watchList">
+      <figure class="empty_watchList_img">
+        <img src="../../assets/img/Diagram - Movie App.svg" alt="" />
+      </figure>
+      <h4>No Movies in watchList</h4>
+      <button class="btn mt-3">Back to home</button>
     </div>
   </div>
 </section>
