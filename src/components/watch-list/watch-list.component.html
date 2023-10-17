@@ -1,4 +1,4 @@
-<section class="watchList">
+<section class="watchList py-4">
   <div class="container">
     <h3>Watch list</h3>
     <div class="row watchList_items">
@@ -7,39 +7,39 @@
           <figure class="col-sm-6">
             <img class="" [src]="movie.img" alt="Card image cap" />
           </figure>
-
           <div class="card-body col-sm-6">
             <div class="d-flex">
               <h5 class="card-title">{{ movie.title }}</h5>
-
-
               <a class="icon_heart" (click)="addToWatchList(movie)">
                 <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
                   <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
                 </ng-container>
                 <ng-template #notFavorite>
-                  <i class="fa-regular fa-heart fa-xl" style="color: #000000"></i>
+                  <i
+                    class="fa-regular fa-heart fa-xl"
+                    style="color: #000000"
+                  ></i>
                 </ng-template>
               </a>
-
-
             </div>
-            </div>
-            <p>{{ movie.release_date }}</p>
+            <p class="watchList_item_date">{{ movie.release_date }}</p>
             <div class="d-flex">
               <div class="stars">
                 <ngb-rating
-                  [max]="7"
+                  [max]="5"
                   [(rate)]="movie.vote_average"
                 ></ngb-rating>
               </div>
               <h6>{{ movie.vote_count }}</h6>
             </div>
-            <p class="card-text">
-              {{ movie.overview }}
-            </p>
+            <div class="card-text watchList_item_description">
+              <p>
+                {{ movie.overview }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </section>
