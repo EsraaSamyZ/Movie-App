@@ -8,13 +8,20 @@ import { MovieService } from 'src/services/themovieAPI.service';
   styleUrls: ['./searchbar.component.css'],
 })
 export class SearchbarComponent {
+  searchedmovie!: any;
+  value!: any;
   constructor(private movieService: MovieService) {}
   movies: Movie[] = [];
-  search() {
+  Movie!: object;
+  search(val: string) {
     this.movieService.getPopularMovies().subscribe((data) => {
       this.movies = data.results;
       console.log(this.movies);
-      // data.forEach((element) => {});
+      this.searchedmovie = this.movies.find((mov) => mov.title.includes(val));
+      console.log(this.searchedmovie);
+      this.movieService
+        .getmovie(this.searchedmovie.title)
+        .subscribe((data) => (this.Movie = data));
     });
   }
 }

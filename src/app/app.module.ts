@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { DetailsPageComponent } from '../components/details-page/details-page.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
@@ -24,11 +23,10 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     HomeComponent,
     WatchListComponent,
     MovieCardComponent,
-    MovieDetailsComponent,
     RecommendationsComponent,
     DetailsPageComponent,
     SearchbarComponent,
-
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +35,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     RouterModule,
     NgbModule,
     DatePipe,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
