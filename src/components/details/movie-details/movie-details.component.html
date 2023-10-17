@@ -1,10 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-4 ms-1">
       <figure><img [src]="movie.img" alt="picture" /></figure>
     </div>
     <div class="col-lg-8 pt-5 w-50 mt-1">
-      <h3 class="fw-bold">{{ movie.title }}</h3>
+      <div class="header d-flex justify-content-between">
+        <h3 class="fw-bold">{{ movie.title }}</h3>
+        <!-- <a class="icon_heart" (click)="addToWatchList(movie)">
+          <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
+            <i class="fa-solid fa-heart fa-xl" style="color: #ffe353"></i>
+          </ng-container>
+          <ng-template #notFavorite>
+            <i class="fa-regular fa-heart fa-xl" style="color: #000000"></i>
+          </ng-template>
+        </a> -->
+      </div>
+
       <p class="text-muted">{{ movie.release_date | date }}</p>
       <div class="stars d-flex flex-row-reverse">
         <p class="mt-1">{{ movie.vote_count }}</p>
@@ -18,8 +29,20 @@
       <div class="details">
         <p>{{ movie.overview }}</p>
       </div>
-      <div *ngFor="let genr of movie.genres">
-        <a href="#" class="btn-genre">{{ genr.name }}</a>
+      <div class="d-flex flex-row flex-nowrap mb-3">
+        <div *ngFor="let genr of movie.genres">
+          <a href="#" class="btn-genre me-2">{{ genr.name }}</a>
+        </div>
+      </div>
+      <div class="info d-flex mt-3">
+        <p>
+          <span class="fw-bold me-2">Duration:</span>{{ movie.runtime
+          }}<span>Min</span>
+        </p>
+        <div class="d-flex ms-5">
+          <span class="fw-bold me-2">Languages:</span>
+          <p *ngIf="movie.original_language === 'en'" class="ms-1">English</p>
+        </div>
       </div>
     </div>
   </div>
