@@ -10,9 +10,9 @@ import { NotFountComponent } from 'src/components/not-fount/not-fount.component'
 const routes: Routes = [
   // { path: '', redirectTo: '/movies', pathMatch: 'full' },
   { path: '', component: HomeComponent },
-  { path: 'movies/:id', component: DetailsPageComponent},
-  { path:'favmovies' ,component :WatchListComponent },
-  {path:'**' , component:NotFountComponent}
+  { path: 'movies/:id', component: DetailsPageComponent },
+  { path: 'favmovies', component: WatchListComponent },
+  { path: '**', component: NotFountComponent },
 ];
 
 @NgModule({
