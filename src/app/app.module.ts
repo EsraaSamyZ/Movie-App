@@ -30,6 +30,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     FormsModule,
     NgbModule,
     NgbRatingModule,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,
