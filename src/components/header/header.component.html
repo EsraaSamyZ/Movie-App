@@ -31,7 +31,9 @@
             routerLink="/favmovies"
             routerLinkActive="text-danger"
             ><i class="fa-solid fa-heart"></i
-            ><span class="ms-1">WishList</span></a
+            ><span class="ms-1" *ngIf="moviesLength > 0">{{
+              moviesLength
+            }}</span></a
           >
         </li>
       </ul>

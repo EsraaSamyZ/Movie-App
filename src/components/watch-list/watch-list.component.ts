@@ -16,6 +16,9 @@ ngOnInit(){
   this.WatchListService.getFavouritMovies().subscribe(res => {
     this.favMovies = res;
   })
+
+
+
 }
 
 addToWatchList(favMovie: Movie) {

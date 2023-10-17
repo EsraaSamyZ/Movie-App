@@ -9,16 +9,25 @@ import { Movie } from '../../interface/movie.interface';
 })
 export class MovieCardComponent {
   @Input() movies!: Movie[];
+  favMovieList :Array<Movie> =[]
 
   constructor(
     private WatchListService: WatchListService,
 
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.WatchListService.getFavouritMovies().subscribe((res)=>{
+          this.favMovieList = res;
+      console.log(this.favMovieList )
+    })
+  }
 
   addToWatchList(favMovie: Movie) {
+
     this.WatchListService.AddtoWatchList(favMovie);
+
+
   }
 
   isFavoriteMovie(favMovie: Movie): boolean {
