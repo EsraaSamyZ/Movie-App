@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/services/themovieAPI.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { Movie } from '../../interface/movie.interface';
 import { WatchListService } from 'src/services/watch-list.service';
 @Component({
