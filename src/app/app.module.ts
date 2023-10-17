@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { DetailsPageComponent } from '../components/details-page/details-page.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
@@ -28,8 +28,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     RecommendationsComponent,
     DetailsPageComponent,
     SearchbarComponent,
-    FormsModule,
-    NgbRatingModule,
+
   ],
   imports: [
     BrowserModule,
