@@ -17,4 +17,4 @@ ngOnInit(){
   })
 }
 }
-export class HeaderComponent {}
+

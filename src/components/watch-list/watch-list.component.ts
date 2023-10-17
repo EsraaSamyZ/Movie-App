@@ -19,5 +19,14 @@ ngOnInit(){
      movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
     })
   })
+
+
+
 }
+
+
+
+
+
+
 }
