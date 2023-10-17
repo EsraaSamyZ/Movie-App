@@ -1,14 +1,14 @@
 <section class="watchList py-4">
   <div class="container">
     <h3>Watch list</h3>
-    <div class="row watchList_items">
+    <div class="row watchList_items" *ngIf="favMovies.length > 0">
       <div class="col-md-6 watchList_item" *ngFor="let movie of favMovies">
-        <div class="favMovie_content card row flex-row">
+        <div class="favMovie_content card row flex-row shadow">
           <figure class="col-sm-6">
             <img class="" [src]="movie.img" alt="Card image cap" />
           </figure>
           <div class="card-body col-sm-6">
-            <div class="d-flex">
+            <div class="d-flex justify-content-between">
               <h5 class="card-title">{{ movie.title }}</h5>
               <a class="icon_heart" (click)="addToWatchList(movie)">
                 <ng-container *ngIf="isFavoriteMovie(movie); else notFavorite">
@@ -22,19 +22,33 @@
                 </ng-template>
               </a>
             </div>
-          </div>
-          <p>{{ movie.release_date }}</p>
-          <div class="d-flex">
-            <div class="stars">
-              <ngb-rating [max]="7" [(rate)]="movie.vote_average"></ngb-rating>
+            <p class="watchList_item_date text-muted">
+              {{ movie.release_date | date }}
+            </p>
+            <div class="d-flex align-items-baseline">
+              <div class="watchList_item_stars">
+                <ngb-rating
+                  [max]="5"
+                  [(rate)]="movie.vote_average"
+                ></ngb-rating>
+              </div>
+              <h6 class="mx-3">{{ movie.vote_count }}</h6>
             </div>
-            <h6>{{ movie.vote_count }}</h6>
+            <div class="card-text watchList_item_description">
+              <p>
+                {{ movie.overview }}
+              </p>
+            </div>
           </div>
-          <p class="card-text">
-            {{ movie.overview }}
-          </p>
         </div>
       </div>
+    </div>
+    <div *ngIf="favMovies.length == 0" class="empty_watchList">
+      <figure class="empty_watchList_img">
+        <img src="../../assets/img/Diagram - Movie App.svg" alt="" />
+      </figure>
+      <h4>No Movies in watchList</h4>
+      <button class="btn mt-3">Back to home</button>
     </div>
   </div>
 </section>
