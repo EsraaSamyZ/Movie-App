@@ -1,0 +1,14 @@
+.watchList_item {
+  display: flex;
+}
+.watchList_item figure {
+  padding: 1rem;
+}
+.watchList_item img {
+  border-radius: 1rem;
+}
+
+.watchList_item_description {
+  height: 10.5rem;
+  overflow: hidden;
+}
