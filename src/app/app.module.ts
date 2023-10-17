@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieCardComponent } from '../components/movie-card/movie-card.component';
 import { MovieDetailsComponent } from '../components/movie-details/movie-details.component';
 import { RecommendationsComponent } from '../components/recommendations/recommendations.component';
+import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { DetailsPageComponent } from '../components/details-page/details-page.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,11 @@ import { DetailsPageComponent } from '../components/details-page/details-page.co
     HomeComponent,
     WatchListComponent,
     MovieCardComponent,
-
     MovieDetailsComponent,
     RecommendationsComponent,
     DetailsPageComponent,
+    SearchbarComponent,
+    FormsModule,
   ],
   imports: [
     BrowserModule,
