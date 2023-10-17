@@ -14,10 +14,6 @@ constructor(private WatchListService:WatchListService){
 ngOnInit(){
   this.WatchListService.getFavouritMovies().subscribe(res => {
     this.favMovies = res;
-    console.log(this.favMovies)
-    this.favMovies.forEach((movie:any) =>{
-     movie.img = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
-    })
   })
 }
 }

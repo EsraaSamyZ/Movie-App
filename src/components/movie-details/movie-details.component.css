@@ -30,3 +30,7 @@ img {
 .info {
   font-size: 0.75rem;
 }
+
+.icon_heart {
+  cursor : pointer;
+}
