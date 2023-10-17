@@ -23,6 +23,8 @@
 }
 .empty_watchList button {
   background-color: #ffe353;
+  outline: none;
+  border: none;
 }
 .empty_watchList_img {
   width: 14rem;
