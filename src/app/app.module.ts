@@ -17,6 +17,7 @@ import { DetailsPageComponent } from '../components/details-page/details-page.co
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NotFountComponent } from 'src/components/not-fount/not-fount.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { PaginationComponent } from './pagination/pagination.component';
     MovieDetailsComponent,
     NotFountComponent,
     PaginationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
