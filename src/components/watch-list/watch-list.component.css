@@ -40,3 +40,7 @@
 .hovr:hover {
   transform: scale(1.05);
 }
+
+.icon_heart {
+  cursor: pointer;
+}
