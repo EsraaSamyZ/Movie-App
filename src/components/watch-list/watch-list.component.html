@@ -3,7 +3,7 @@
     <h3>Watch list</h3>
     <div class="row watchList_items" *ngIf="favMovies.length > 0">
       <div class="col-md-6 watchList_item" *ngFor="let movie of favMovies">
-        <div class="favMovie_content card row flex-row shadow">
+        <div class="favMovie_content card row flex-row shadow hovr">
           <figure class="col-sm-6">
             <img class="" [src]="movie.img" alt="Card image cap" />
           </figure>

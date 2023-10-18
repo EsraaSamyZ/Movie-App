@@ -1,0 +1,20 @@
+footer {
+    background-color: #ffe353;
+}
+
+.social li i {
+    font-size: 24px;
+    margin-right: 10px;
+    color: black;
+  }
+
+  .designed-text {
+    font-weight: light; 
+    color: #000000; 
+  }
+  
+
+  .copyright-text {
+    font-weight: bold;
+    color: #000000;
+  }
